@@ -109,4 +109,26 @@ function isPangram(pangram: string): boolean {
     return output.size === 26
 }
 
-console.log(isPangram('the quick brown fox jumps over with lazy FX'))
+// console.log(isPangram('the quick brown fox jumps over with lazy FX'))
+
+function toRna(dna: string): string {
+const transcribetoRNA = {
+    'G' : 'C',
+    'C' : 'G',
+    'T' : 'A',
+    'A' : 'U'
+}
+let output = "";
+
+for (let i = 0; i < dna.length; i++) {
+    const char = dna[i];
+    if (char in transcribetoRNA) {
+        output += transcribetoRNA[char]
+    } else {
+        return 'Invalid input DNA.'
+    }
+}
+
+return output 
+}
+console.log(toRna('ACGTXXXCTTAA'))
