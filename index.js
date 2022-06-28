@@ -49,4 +49,9 @@ function decodedResistorValue(colors) {
     const numberToString = electricalValue.toString();
     return numberToString.length === 3 || numberToString.length === 2 ? `${electricalValue} ohms` : `${(electricalValue / 1000).toString()} kiloohms`;
 }
-console.log(decodedResistorValue(['yellow', 'violet', 'yellow']));
+// console.log(decodedResistorValue(['yellow', 'violet', 'yellow']))
+// Leap Year 
+function isLeap(year) {
+    return ((year > 0 && year % 4 === 0 && year % 100 != 0) || year % 400 === 0);
+}
+// console.log(isLeap(1960))
