@@ -55,3 +55,20 @@ function isLeap(year) {
     return ((year > 0 && year % 4 === 0 && year % 100 != 0) || year % 400 === 0);
 }
 // console.log(isLeap(1960))
+// Resistor Color 
+function colorCode(color) {
+    const ResistorColors = {
+        black: 0,
+        brown: 1,
+        red: 2,
+        orange: 3,
+        yellow: 4,
+        green: 5,
+        blue: 6,
+        violet: 7,
+        grey: 8,
+        white: 9
+    };
+    return ResistorColors[color];
+}
+console.log(colorCode('orange'));
