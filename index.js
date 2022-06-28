@@ -71,4 +71,12 @@ function colorCode(color) {
     };
     return ResistorColors[color];
 }
-console.log(colorCode('orange'));
+// console.log(colorCode('orange'))
+// Pangram
+function isPangram(pangram) {
+    const alphabetSearch = pangram.match(/[A-Z]/gi);
+    const output = new Set(alphabetSearch);
+    console.log(output.size);
+    return output.size === 26;
+}
+console.log(isPangram('the quick brown fox jumps over with lazy FX'));

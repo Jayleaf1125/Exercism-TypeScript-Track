@@ -70,14 +70,14 @@ function decodedResistorValue(colors: string[]): string {
     const electricalValue = resistorColorBand * Math.pow(10, parseInt(ResistorColors[color3], 10));
     const numberToString: string = electricalValue.toString();
 
-    return numberToString.length === 3 || numberToString.length === 2 ? `${electricalValue} ohms` : `${(electricalValue/1000).toString()} kiloohms`
+    return numberToString.length === 3 || numberToString.length === 2 ? `${electricalValue} ohms` : `${(electricalValue / 1000).toString()} kiloohms`
 }
 
 // console.log(decodedResistorValue(['yellow', 'violet', 'yellow']))
 
 // Leap Year 
 function isLeap(year: number): boolean {
-    return ((year > 0 && year % 4 === 0 && year % 100 != 0) || year % 400 === 0); 
+    return ((year > 0 && year % 4 === 0 && year % 100 != 0) || year % 400 === 0);
 }
 
 // console.log(isLeap(1960))
@@ -99,4 +99,14 @@ function colorCode(color: string): number {
     return ResistorColors[color]
 }
 
-console.log(colorCode('orange'))
+// console.log(colorCode('orange'))
+
+// Pangram
+function isPangram(pangram: string): boolean {
+    const alphabetSearch = pangram.match(/[A-Z]/gi);
+    const output = new Set(alphabetSearch)
+    console.log(output.size)
+    return output.size === 26
+}
+
+console.log(isPangram('the quick brown fox jumps over with lazy FX'))
