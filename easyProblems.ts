@@ -18,7 +18,7 @@ function twoFer(name = 'you'): string {
 function decodedValue(colors: string[]): number {
 
     type Colors = {
-        black: string;
+        [black: string]: any;
         brown: string;
         red: string;
         orange: string;
@@ -52,7 +52,21 @@ function decodedValue(colors: string[]): number {
 
 // Resistor Color Trio
 function decodedResistorValue(colors: string[]): string {
-    const ResistorColors = {
+    type Colors = {
+        [black: string]: any;
+        brown: string;
+        red: string;
+        orange: string;
+        yellow: string;
+        green: string;
+        blue: string;
+        violet: string;
+        grey: string;
+        white: string;
+
+    }
+
+    const ResistorColors: Colors = {
         black: '0',
         brown: '1',
         red: '2',
@@ -84,7 +98,21 @@ function isLeap(year: number): boolean {
 
 // Resistor Color 
 function colorCode(color: string): number {
-    const ResistorColors = {
+    type Colors = {
+        [black: string]: number;
+        brown: number;
+        red: number;
+        orange: number;
+        yellow: number;
+        green: number;
+        blue: number;
+        violet: number;
+        grey: number;
+        white: number;
+
+    }
+
+    const ResistorColors: Colors = {
         black: 0,
         brown: 1,
         red: 2,
@@ -111,12 +139,20 @@ function isPangram(pangram: string): boolean {
 // console.log(isPangram('the quick brown fox jumps over with lazy FX'))
 
 function toRna(dna: string): string {
-const transcribetoRNA = {
-    'G' : 'C',
-    'C' : 'G',
-    'T' : 'A',
-    'A' : 'U'
+    type Transcribe = {
+        [G: string]: string;
+        C: string;
+        T: string;
+        A: string;
+    }
+
+const transcribetoRNA: Transcribe = {
+    G : 'C',
+    C : 'G',
+    T : 'A',
+    A : 'U'
 }
+
 let output = "";
 
 for (let i = 0; i < dna.length; i++) {
@@ -130,4 +166,4 @@ for (let i = 0; i < dna.length; i++) {
 
 return output 
 }
-// console.log(toRna('ACGTXXXCTTAA'))
+console.log(toRna('AXX'))
